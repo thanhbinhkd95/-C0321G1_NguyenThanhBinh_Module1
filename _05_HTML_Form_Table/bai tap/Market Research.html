@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Market Research Survey</title>
+    <style>
+        div table {
+            width auto;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: #eee;
+        }
+        tr:nth-child(odd) {
+            background-color:#fff;
+        }
+        th {
+            background-color: moccasin;
+            color: black;
+        }
+    </style>
+
+</head>
+<body>
+<form>
+    <h1><b>Market Research Survey</b></h1>
+    <p>Please take a few moment to complete this satisfaction survey</p>
+    <br>
+    <b>What is your age range?</b><br>
+    <select name="18-24" style="width: 300px">
+        <option value="18-24">18-24</option>
+        <option value="25-34">25-34</option>
+        <option value="35-50">35-50</option>
+        <option value="50+">50+</option>
+    </select>
+    <br><br>
+    <b>What is you yearly income range?</b><br>
+    <select name="$0-25,000" style="width: 300px">
+        <option value="$0-25,000">$0-25,000</option>
+        <option value="$25,001-50000">$25,001-50,000</option>
+        <option value="$50,001-100000">$50,001-100,000</option>
+        <option value="$100,000+">$100,000+</option>
+    </select>
+    <p><b>Gender identity</b></p>
+    <input type="radio" name="gender" value="male" checked>Male<br>
+    <input type="radio" name="gender" value="female">Female<br>
+    <input type="radio" name="gender" value="nonbinary">Nonbinary<br>
+    <input type="radio" name="gender" value="other">Other<br>
+    <textarea cols="50" rows="1"></textarea><br><br>
+    <b>Which of the following products have your purchased in the last 2 months. Please check all that apply.
+    </b><br><br>
+    <input type="checkbox" name="product1" value="1">Product 1<br>
+    <input type="checkbox" name="product2" value="2">Product 2<br>
+    <input type="checkbox" name="product3" value="3">Product 3<br>
+    </select>
+    <p><b>How often would you use our new product?
+    </b></p>
+    <input type="checkbox" name="Daily" value="day" checked>Daily<br>
+    <input type="checkbox" name="Weekly" value="week">Weekly<br>
+    <input type="checkbox" name="Monthly" value="Month">Monthly<br>
+    <input type="checkbox" name="gender" value="other">Other<br>
+    <br>
+    <b>What features would you like to see in the new product.</b><br><br>
+    <textarea cols="50" rows="6"></textarea><br><br>
+
+    Please rate your level of agreement with the following statements.
+    <br><br>
+
+    <div><table border="1">
+        <tr>
+            <th style="width auto"></th>
+            <th style="width 120px">Strongly Disagree</th>
+            <th style="width: 120px">Disagree</th>
+            <th style="width: 120px">Agree</th>
+            <th style="width: 120px">Strongly Agree</th>
+        </tr>
+        <tr>
+            <td style="width:250px">Our product are priced fairly</td>
+            <td><input type="checkbox" name="1" value="1">1</td>
+            <td><input type="checkbox" name="2" value="2">2</td>
+            <td><input type="checkbox" name="3" value="3">3</td>
+            <td><input type="checkbox" name="4" value="4">4</td>
+
+        </tr>
+        <tr>
+            <td style="width:250px">Our product are high quality</td>
+            <td><input type="checkbox" name="1" value="1">1</td>
+            <td><input type="checkbox" name="2" value="2">2</td>
+            <td><input type="checkbox" name="3" value="3">3</td>
+            <td><input type="checkbox" name="4" value="4">4</td>
+        </tr>
+        <tr>
+            <td style="width:250px">You would recommended our product to a friend or coworker</td>
+            <td><input type="checkbox" name="1" value="1">1</td>
+            <td><input type="checkbox" name="2" value="2">2</td>
+            <td><input type="checkbox" name="3" value="3">3</td>
+            <td><input type="checkbox" name="4" value="4">4</td>
+        </tr>
+    </table></div><br>
+    <input type="submit" value="Submit">
+
+</form>
+</body>
+</html>
