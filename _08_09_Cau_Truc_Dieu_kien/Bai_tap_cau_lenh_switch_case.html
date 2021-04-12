@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu lệnh Switch Case</title>
+</head>
+<body>
+<center>
+    <h1 style="text-align: center">Ứng dụng tính số ngày trong tháng</h1><br>
+    <h2 style="text-align: center"><label for="input1">Nhập tháng dưới đây</label></h2>
+    <input type="number" id="input1" name="Tính số ngày" placeholder="Nhập tháng" style="text-align: center">
+    <button onclick="tinh1()" value="Tính số ngày">Tính số ngày</button>
+    <p id="ketqua1"></p>
+</center>
+<script>
+    function tinh1() {
+        let a = parseInt(document.getElementById("input1").value);
+        switch (a) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12: {
+                document.getElementById("ketqua1").innerHTML = "Tháng có 31 ngày";
+                break;
+            }
+            case 2: {
+                document.getElementById("ketqua1").innerHTML = "Tháng có 28 hoặc 29 ngày";
+                break;
+            }
+            default: {
+                document.getElementById("ketqua1").innerHTML = "Tháng có 30 ngày";
+            }
+
+        }
+
+
+    }
+</script>
+</body>
+</html>

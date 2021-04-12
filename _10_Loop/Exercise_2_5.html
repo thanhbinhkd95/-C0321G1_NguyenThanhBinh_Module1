@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hinh chu nhat</title>
+</head>
+<body>
+<script>
+  var m = prompt("Nhapsodo")
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= m; j++) {
+      if (i == 1 || i == m || j == 1 || j == m)
+       document.write("*");
+      else
+        document.write("&nbsp; ");
+    }
+    document.write('<br>');
+  }
+</script>
+</body>
+</html>

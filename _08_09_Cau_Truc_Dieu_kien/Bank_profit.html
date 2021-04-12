@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank profit calculated</title>
+    <style>
+        input[type ="button"] {
+            border-radius: 20px;
+            background-color: white;
+            color: black;
+            border-color: dodgerblue;
+            width: 100%;
+        }
+
+        input[type ="text"] {
+            border-radius: 20px;
+            background-color: white;
+            color: black;
+            border-color: dodgerblue;
+            width: 100%;
+        }
+
+        table {
+            background-color: silver;
+            border-radius: 1px;
+
+        }
+    </style>
+</head>
+<body>
+<center>
+    <table>
+        <tr>
+            <th colspan="3"><h2>Trình tính lãi tiết tiệm</h2></th>
+        </tr>
+        <tr>
+            <td><label for="tien1" id="sotien1"> Nhập số tiền</label></td>
+            <td><input type="number" id="tien1" placeholder="Nhập số tiền"></td>
+            <td><p>VND</p></td>
+        </tr>
+
+        <tr>
+            <td><label for="kihan1">Kỳ hạn mong muốn</label></td>
+            <td><select style="width: 300px" id="kihan1" name="Không kỳ hạn">
+                <option value="1">Dưới 1 tháng</option>
+                <option value="3">Từ 1 - 3 tháng</option>
+                <option value="6">Từ 3 - 6tháng</option>
+                <option value="9">Từ 6 - 9 tháng</option>
+                <option value="12">Trên 12 tháng</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td><p>Lãi suất</p></td>
+            <td><input type="text" id="laisuat1"></p></td>
+        </tr>
+        <tr>
+            <td><p style= "align-content: center;background-color: white" id="tonglai1">Tổng tiền và lãi là: </p></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="button" onclick="tinhlai1()">Tính lãi suất</button>
+            </td>
+        </tr>
+
+
+    </table>
+</center>
+<script>
+
+    function tinhlai1() {
+        let t = parseFloat(document.getElementById("tien1").value);
+        let m = parseFloat(document.getElementById("kihan1").value);
+        let l = parseFloat(document.getElementById("laisuat1").value);
+        let c = parseFloat(t*(Math.pow(1+(l/100),m)));
+        document.getElementById("tonglai1").innerText =(c + " VND")
+
+    }
+</script>
+</body>
+</html>

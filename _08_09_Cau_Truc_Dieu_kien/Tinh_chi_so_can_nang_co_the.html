@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính chỉ số cân nặng cơ thể</title>
+</head>
+<body>
+<h1 style="text-align-all: center">Bảng tính chỉ số cơ thể</h1><br>
+<h2><label for="input1">Điền cân nặng của bạn vào đây.</label></h2>
+<input type="number" id="input1" name="số kg" placeholder="Nhập số kg"><br>
+<h2><label for="input2">Điền chiều cao của bạn vào đây.</label></h2>
+<input type="number" id="input2" name="chiều cao" placeholder="Đơn vị m"><br><br>
+<button onclick="Tinh1()" value="Tính BMI">Tính chỉ số BMI</button><br><br>
+<p id="ketqua1">Chỉ số IBM của bạn là: </p>
+<script>
+    function Tinh1() {
+        let a = document.getElementById("input1").value;
+        let b = document.getElementById("input2").value;
+        let c = parseFloat(a/(Math.pow(b,2)));
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        if (c < 18)
+            document.getElementById("ketqua1").innerHTML = "Underweight";
+        else if (c < 25.0)
+            document.getElementById("ketqua1").innerHTML = "Normal"  ;
+        else if (c < 30.0)
+            document.getElementById("ketqua1").innerHTML = "Overweight"  ;
+        else
+            document.getElementById("ketqua1").innerHTML = "Obese"  ;
+
+    }
+</script>
+
+</body>
+</html>

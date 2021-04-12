@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+<button type="button" onclick="choi()" value="Chơi nào" name="Chơi đê">Sợ gì không chơi</button>
+<script>
+    function choi() {
+        let a;
+        let check1;
+        let check2;
+        let dem = 0;
+        do {
+            a = prompt("Nhập nhiệt độ mong muốn ")
+            check1 = (a < 20)
+            check2 = (a > 100)
+            if (check1) {
+                alert("Lạnh vá tăng nhiệt độ đi")
+            }
+            if (check2) {
+                alert("Nóng vá giảm nhiệt độ đi")
+            } else {
+                alert("Toẹt vời")
+
+            }
+            dem++;
+
+        }
+        while (dem <= 3);
+        alert(a);
+    }
+</script>
+</center>
+</body>
+</html>

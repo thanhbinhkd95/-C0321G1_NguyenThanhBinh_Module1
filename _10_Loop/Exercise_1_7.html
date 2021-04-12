@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a;
+    let check1;
+    let check2;
+    let c = 0;
+    do {
+        a = prompt("Nhập số mong muốn ")
+        check1 = (a % 3 == 0)
+        check2 = (a % 5 == 0)
+        check3 = (check1 && check2)
+        if (check3) {
+            alert("FizzBuzz")
+        }
+        else if (check2) {
+            alert("Buzz")
+        }
+        else if (check1) {
+            alert("Fizz")
+
+        }
+        c++;
+
+    }
+    while (c <= 3);
+    alert(a);
+
+</script>
+</body>
+</html>
