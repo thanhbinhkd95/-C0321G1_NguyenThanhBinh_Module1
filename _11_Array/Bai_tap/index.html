@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tíc tắc toe</title>
+  </head>
+  <body>
+    <!-- Xây dựng game caro đơn giản sử dụng phần thực hành về tạo bàn cờ caro. Bàn cờ thay vì số 0 hiển thị mặc định bằng dấu (.). -->
+
+    <!-- Có 2 người chơi lần lượt nhập vào là X và O. Mỗi lần giá trị được nhập vào thì bàn cờ thay đổi giá trị theo người chơi. -->
+
+    <!-- Xác định người chiến thằng nhập giá trị có 3 ô liên tiếp giống nhau. -->
+    <h2>Caro tic tac toe</h2>
+    <br />
+    <table id="table" border="1"></table>
+    <script>
+      let width = 4;
+      let height = 4;
+      let ticTacToe = [];
+      let count = 0;
+
+      function check(a, b, c) {
+        return a === b && b === c && c === a;
+      }
+
+      function init() {
+        for (let i = 0; i < width; i++) {
+          ticTacToe.push(new Array(height));
+        }
+        for (let i = 0; i < width; i++) {
+          for (let j = 0; j < height; j++) {
+            ticTacToe[i][j] = " ";
+          }
+        }
+      }
+
+      function checkRow() {
+        for (let i = 0; i < ticTacToe.length; i++) {
+          for (let j = 0; j < ticTacToe.length - 2; j++) {
+            if (
+              check(ticTacToe[i][j], ticTacToe[i][j + 1], ticTacToe[i][j + 2])
+            ) {
+              switch (ticTacToe[i][j]) {
+                case "x":
+                  return 1;
+                case "o":
+                  return 0;
+              }
+            }
+          }
+        }
+        return -1;
+      }
+
+      function checkCol() {
+        for (let i = 0; i < ticTacToe.length - 2; i++) {
+          for (let j = 0; j < ticTacToe.length; j++) {
+            if (
+              check(ticTacToe[i][j], ticTacToe[i + 1][j], ticTacToe[i + 2][j])
+            ) {
+              switch (ticTacToe[i][j]) {
+                case "x":
+                  return 1;
+                case "o":
+                  return 0;
+              }
+            }
+          }
+        }
+        return -1;
+      }
+
+      function checkCrossLeft() {
+        for (let i = 0; i < ticTacToe.length - 2; i++) {
+          for (let j = 0; j < ticTacToe.length - 2; j++) {
+            if (
+              check(
+                ticTacToe[i][j],
+                ticTacToe[i + 1][j + 1],
+                ticTacToe[i + 2][j + 2]
+              )
+            ) {
+              console.log(i, j);
+              switch (ticTacToe[i][j]) {
+                case "x":
+                  return 1;
+                case "o":
+                  return 0;
+              }
+            }
+          }
+        }
+        return -1;
+      }
+
+      function checkCrossRight() {
+        for (let i = 0; i < ticTacToe.length - 2; i++) {
+          for (let j = 2; j < ticTacToe.length; j++) {
+            if (
+              check(
+                ticTacToe[i][j],
+                ticTacToe[i + 1][j - 1],
+                ticTacToe[i + 2][j - 2]
+              )
+            ) {
+              switch (ticTacToe[i][j]) {
+                case "x":
+                  return 1;
+                case "o":
+                  return 0;
+              }
+            }
+          }
+        }
+        return -1;
+      }
+
+      function show() {
+        let table = "";
+        for (let i = 0; i < width; i++) {
+          let temp = `<tr>\n`;
+          for (let j = 0; j < height; j++) {
+            temp += `<td><button onclick="changeValue(${i},${j});"style="width:40px; height:40px; text-align:center;">${ticTacToe[i][j]}</button></td>`;
+          }
+          temp += `<tr>\n`;
+          table += temp;
+        }
+        document.getElementById("table").innerHTML = table;
+      }
+
+      function checkWin() {
+        let rs = [checkCol(), checkRow(), checkCrossRight(), checkCrossLeft()];
+        if (rs.indexOf(1) !== -1) {
+          alert("x win");
+        } else if (rs.indexOf(0) !== -1) {
+          alert("o win");
+        } else if (count === width * height) {
+          alert("Draw");
+        }
+      }
+
+      function changeValue(x, y) {
+        if (ticTacToe[x][y] === " ") {
+          if (count % 2) {
+            ticTacToe[x][y] = "o";
+          } else {
+            ticTacToe[x][y] = "x";
+          }
+          count++;
+          show();
+          checkWin();
+        }
+      }
+
+      init();
+      show();
+    </script>
+  </body>
+</html>

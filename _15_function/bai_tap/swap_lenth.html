@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h3>Ứng dụng chuyển đổi</h3>
+    <!--
+        <input type="text" name="giá trị" placeholder="Nhập giá trị cần tính" id="n"><br>
+        <p><label for="chon1"></label></p>
+        <select id="chon1" name="Chọn đơn vị">
+            <option value="0.305">Từ foot sang met</option>
+            <option value="3.279">Từ met sang foot</option>
+        </select>
+        <button onclick="tinh1()" value="tinhne" name="tinh ne">Tính nè</button>
+        <p id="mmm"></p>
+
+        <script>
+
+            function tinh1() {
+                let a = parseFloat(document.getElementById("n").value);
+                let b = parseFloat(document.getElementById("chon1").value);
+                console.log(b);
+                let t = a * b;
+                document.getElementById("mmm").innerHTML = t + " donvi"
+
+            }
+        </script>
+    -->
+    <input type="text" id="met" style="width: 600px" oninput=" mtf()"
+           placeholder="Chuyển met sang feet"><br><br>
+    <input type="text" id="feet" style="width: 600px" oninput=" ftm()"
+           placeholder="Chuyển feet sang meet"><br>
+    <script>
+        function mtf() {
+            let a = parseFloat(document.getElementById("met").value);
+            a = a * 0.305;
+            console.log(a);
+            document.getElementById("feet").value = a + " feet";
+        }
+
+        function ftm() {
+            let a = parseFloat(document.getElementById("feet").value);
+            a = a * 3.279;
+            console.log(a);
+            document.getElementById("met").value = a + " met";
+        }
+    </script>
+
+</center>
+</body>
+</html>

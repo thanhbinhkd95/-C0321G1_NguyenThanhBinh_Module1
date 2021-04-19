@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Bài 6</title>
+</head>
+<body>
+<center>
+    <h1>Changing "-" into "_"</h1>
+    <textarea style="width: 500px; height: 200px" onkeyup="changing1()" onchange="dis()" id="display"></textarea><br>
+    <textarea style="width: 500px; height: 200px"  id="display1"></textarea>
+
+    <script>
+        function changing1() {
+            let arrStr = vlxx.from();
+            for (let i = 0; i < arrStr.length; i++) {
+                if (arrStr[i] === "-") {
+                    arrStr[i] = "_";
+                }
+            }
+
+        }
+
+        function dis(val) {
+          document.getElementById("display1").value += val
+        }
+
+    </script>
+</center>
+</body>
+</html>

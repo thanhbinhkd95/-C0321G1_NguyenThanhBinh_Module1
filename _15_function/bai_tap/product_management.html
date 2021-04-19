@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Management</title>
+    <style>
+        div {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<!--<center>-->
+<h2>Ứng dụng quản lý sản phẩm</h2>
+<h3><label for="add1">Add new product</label></h3>
+<input type="text" id="add1" style="width: 350px" placeholder="New product">
+<button onclick="add();">Add</button>
+<br><br>
+<div id="formEdit"></div>
+<h3>Display All Product</h3>
+<h4>Product name</h4>
+<div id="tableproducts"></div>
+
+<script>
+    let products =
+        ["Sony cuibap",
+            "Samsung sieulag",
+            "Iphone be man hinh",
+            "Xiaomi mua di",
+            "Oppo SonTung"];
+    show();
+
+    function show() {
+        let tableproducts = "<table>";
+        for (let i = 0; i < products.length; i++) {
+            tableproducts += `
+          <tr>
+            <td>${products[i]}</td>
+            <td><button onclick='showEdit(${i});'>Edit</button></td>
+            <td><button onclick='remove(${i});'>Delete</button></td>
+          </tr>
+          `;
+        }
+        tableproducts += "</table>";
+        document.getElementById("tableproducts").innerHTML = tableproducts;
+    }
+
+    function add() {
+        let temp = document.getElementById("add1");
+        products.push(temp.value);
+        show();
+        temp.value = "";
+        temp.focus();
+    }
+
+    function remove(index) {
+        /* /!*products = products.filter(function (e, i) {
+             return i !== index;*!/
+     });*/
+        products.splice(index, 1);
+        show();
+    }
+
+    function update(index) {
+        products[index] = document.getElementById("edit").value;
+        document.getElementById("formEdit").innerHTML = "";
+        show();
+    }
+
+    function showEdit(index) {
+        document.getElementById("formEdit").innerHTML = `
+          <input id="edit" type="text" name="" value='${products[index]}'>
+          <button onclick="update(${index});">Update</button>
+          `;
+        document.getElementById("edit").focus();
+    }
+
+    /*  function add(){}
+      function edit(){}*/
+
+
+</script>
+<!--</center>-->
+</body>
+</html>

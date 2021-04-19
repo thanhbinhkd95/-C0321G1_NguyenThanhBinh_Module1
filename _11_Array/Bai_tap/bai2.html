@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bài 2</title>
+  </head>
+  <body>
+    <!-- Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau. Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó. -->
+    <script>
+      let arr = [1, 2, 44, 66, 6, 12, 34, 24, 56, 67];
+      document.write(
+        "Phần tử lớn nhất là " +
+          Math.max(...arr) +
+          ", và nằm ở vị trí " +
+          arr.indexOf(Math.max(...arr))
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+<h1>Trinh chuyen doi nhiet do</h1>
+<h3><label for="celcius">Celcius</label></h3>
+<input id="celcius" type="number" value="C" name="C" oninput="swapc()">
+<h3><label for="fahrenheit">Fahrenheit</label></h3>
+<input id="fahrenheit" type="number" value="F" name="F" oninput="swapf()">
+<h3><label for="kelvins">Kelvins</label></h3>
+<input id="kelvins" type="number" value="K" name="K" oninput="swapk()">
+
+<script>
+    class Temperature {
+        constructor(Celsius, Fahrenheit, Kelvins) {
+            this.Celcius = Celsius;
+            this.Fahrenheit = Fahrenheit;
+            this.Kelvins = Kelvins;
+        }
+             /*CHUYỂN NHIỆT ĐỘ TỪ C SANG F VÀ K*/
+        getCtoF() {
+            let f = this.Celcius * 9 / 5 + 32
+            // document.getElementById("fahrenheit").value = f + "do F"
+            return f
+        }
+
+        getCtoK() {
+            let k = this.Celcius + 273.15
+            // document.getElementById("kelvins").innerHTML = k + "do K"
+            return k
+        }
+
+        /*CHUYỂN NHIỆT ĐỘ TỪ K SANG C VÀ F*/
+
+        getKtoC() {
+            let c = this.Kelvins - 273.15
+            /*  document.write(c + " độ C")*/
+            return c
+        }
+
+        getKtoF() {
+            let f = (this.Kelvins - 273.15) + 32
+            /*document.write(f + " độ F")*/
+            return f
+        }
+
+        /*CHUYỂN NHIỆT ĐỘ TỪ F SANG C VÀ K*/
+        getFtoC() {
+            let c = (this.Fahrenheit - 32) * 5/9
+            /* document.write(c + " độ C")*/
+            return c
+        }
+
+        getFtoK() {
+            let k = (this.Fahrenheit - 32) * 5/9 + 273.15
+            /*     document.write(k + " độ K")*/
+            return k
+        }
+
+        setCelcius(Celsius) {
+            this.Celcius = Celsius
+        }
+
+        getCelcius() {
+            return this.Celcius
+        }
+
+
+        setFahrenheit(Fahrenheit) {
+            this.Fahrenheit = Fahrenheit
+        }
+
+        getFahrenheit() {
+            return this.Fahrenheit
+        }
+
+
+        setKevin(Kelvins) {
+            this.Kelvins = Kelvins
+        }
+
+        getKelvins() {
+            return this.Kelvins
+        }
+    }
+
+    /*let c = document.getElementById("celcius").value
+    let c = document.getElementById("celcius").value*/
+    function swapc() {
+        let c = parseFloat(document.getElementById("celcius").value)
+        let temprature1 = new Temperature(c)
+
+        document.getElementById("fahrenheit").value = temprature1.getCtoF();
+        document.getElementById("kelvins").value = temprature1.getCtoK();
+        /*   console.log(c)*/
+    }
+
+    function swapf() {
+        let f = parseFloat(document.getElementById("fahrenheit").value)
+        let temprature2 = new Temperature(0,f,0)
+
+        document.getElementById("celcius").value = temprature2.getFtoC();
+        document.getElementById("kelvins").value = temprature2.getFtoK();
+       /* console.log(f)
+        console.log(temprature2.getFtoK())*/
+    }
+
+    function swapk() {
+        let k = parseFloat(document.getElementById("kelvins").value)
+        let temprature3 = new Temperature(0,0,k)
+        document.getElementById("celcius").value = temprature3.getKtoC();
+        document.getElementById("fahrenheit").value = temprature3.getKtoF();
+        /*  console.log(k)*/
+    }
+</script>
+</body>
+</html>
