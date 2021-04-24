@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = [5, 2, 5]
+    let d = [6, 3, 4]
+    let c = []
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+      c.push(n[i]/d[j]);
+        }
+    }console.log(c)
+    let max = c[0]
+    for (let i=1;i<c.length;i++){
+      if (c[i]>max){
+        max = c[i]
+      }
+    }document.write(max)
+
+</script>
+
+</body>
+</html>

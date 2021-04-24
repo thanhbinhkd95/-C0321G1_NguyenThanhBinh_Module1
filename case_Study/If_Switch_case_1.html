@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>If and Switch case</title>
+
+</head>
+<body>
+<center>
+    <h1>App tính lương</h1>
+    <h3><label for="luong">Nhập số lương của bạn vào đây</label></h3>
+    <input type="number" id="luong" placeholder="Đơn vị: triệu đồng" oninput="tinhthue()"><br>
+    <h3 id="thue">Thuế của bạn là</h3>
+    <p id="luongrong">Lương của bạn là</p>
+    <script>
+
+        function tinhthue() {
+            let a = parseFloat(document.getElementById("luong").value);
+            let b = 0;
+            let c = 0;
+            if (a<=7){
+                b = 5*a/100
+            }
+            else if(a<=15){
+                b = 10*a/100
+            }
+            else {
+                b = 20*a/100
+            }
+            c = a - b;
+            document.getElementById("thue").innerHTML = "Tiền thuế là " + b + " triệu đồng"
+            document.getElementById("luongrong").innerHTML = "Lương ròng là " + c + " triệu đồng"
+        }
+
+    </script>
+</center>
+</body>
+</html>

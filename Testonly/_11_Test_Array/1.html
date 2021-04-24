@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // nhập số phần tử của mảng (0<n<20)
+    let n;
+    do {
+        n = prompt(" nhập vào số lượng phần tử của mảng")
+    }while (!(0<n&&n<=20));
+    let arr= new Array(n);
+    // nhập giá trị phần tử cho mảng
+    for (let i=0;i<n;i++){
+        arr[i]= prompt(" nhập phần tử thứ: "+ i);
+    }
+    alert("mảng bàn đầu"+arr);
+    //  sử dụng splice();
+    // xóa phần tử trong mảng
+    arr.splice(1,2);
+    alert("mảng sau khi xóa"+arr);
+    // thêm phần tử vào mảng
+    arr.splice(1,0,"môt","hai");
+    alert("mảng sau khi thêm"+arr);
+    // sort() theo ký tự
+    // arr.sort();
+    // alert(" mảng sau khi sort: " + arr)
+    // // sort() theo giá trị
+    // arr.sort(function (a,b) {
+    //     return b-a;
+    // })
+    // alert(" mảng sau khi sort 2: "+ arr)
+</script>
+</body>
+</html>

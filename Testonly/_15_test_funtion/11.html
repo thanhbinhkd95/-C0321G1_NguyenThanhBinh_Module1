@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  function displayHello() {
+    alert("Hello");
+  }
+
+  // displayHello();
+  function displayMessage(message) {
+    alert(message);
+  }
+
+  // displayMessage("Xin chào");
+  // displayMessage("Hello codegym");
+  // displayMessage("Hello Đà nẵng");
+
+  // tính tổng 2 số không có return
+  function sum1(a, b) {
+    let c = a + b;
+    alert(c);
+  }
+
+  // sum1(1,2);
+  // tính tổng 2 số và có kết quả trả về
+  function sum2(a, b) {
+    let c = a + b;
+    alert(c);
+    return c;
+  }
+
+  // let tong1 = sum2(2,3);
+  //   let tong2= sum2(4,5);
+  //   let tong = sum2(tong1,tong2);
+
+
+  // hàm kiểm tra 1 số có phải là số nguyên tố hay không?
+  function kiemTraSNT(num) {
+    if (num < 2) {
+      return false;
+    } else {
+      for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i == 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+  }
+
+  // let n = prompt("nhập vào số cần kiểm tra");
+  // alert(kiemTraSNT(n));
+  // viết function truyền vào mảng các số nguyên=> hàm trả về tổng các số nguyên tố chứa trong mảng
+
+  function tongCacSoNT(arr) {
+    let tong = 0;
+    for (let i = 0; i < arr.length; i++) {
+      if (kiemTraSNT(arr[i])) {
+        tong += arr[i];
+      }
+    }
+    return tong;
+  }
+
+  // let a = [1, 2, 3, 4, 5, 6, 7];
+  // alert(tongCacSoNT(a))
+
+  function kiemTraDoiXung(str) {
+    let first = 0;
+    let last = str.length - 1;
+    if (first >= last) {
+      return true;
+    } else if (str[first] != str[last]) {
+      return false;
+    } else {
+      str = str.slice(1, str.length - 1);
+      return kiemTraDoiXung(str);
+    }
+  }
+
+  // let st = prompt("nhập vào chuỗi cần kiểm tra");
+  // alert(kiemTraDoiXung(st));
+
+  function change1(a) {
+    a++;
+    alert("giá trị trong hàm: "+a)
+  }
+
+  // let b = 1;
+  // alert(" biến b trước khi gọi hàm change"+b);
+  // change1(b);
+  // alert(" biến b trước khi gọi hàm change"+b);
+
+  function change2(arr) {
+    arr.pop();
+    alert(arr.length);
+
+  }
+  let arr1 =[1,2,3,4,5];
+  alert("độ dài của arr1 trước "+ arr1.length);
+  change2(arr1);
+  alert("độ dài của arr1 sau "+ arr1.length);
+</script>
+</body>
+</html>

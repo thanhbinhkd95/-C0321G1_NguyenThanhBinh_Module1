@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    // let nameArr = ["Hong", "Hoa", "Hue"];
+    //
+    // for(let index in nameArr){
+    //     document.write(index + "<br/>")
+    // }
+    //
+    // for(let element of nameArr){
+    //     document.write(element + "<br/>")
+    // }
+
+
+    let fixString = "Tôi là một đứa ngốc!!!".split("");
+    console.log(fixString);
+
+    function fakingText() {
+      let inputText = document.getElementById("display").value;
+      let outputText = new Array(inputText.length)
+      console.log("input text:" + inputText);
+
+      if(outputText.length > fixString.length){
+        outputText = [""];
+      }
+
+      for (let i = 0; i < outputText.length; i++) {
+        outputText[i] = fixString[i];
+      }
+
+      document.getElementById("display").value = outputText.join("");
+
+    }
+  </script>
+</head>
+<body>
+<h1>Type anthing slowly</h1>
+<textarea style="width: 500px; height: 200px" onkeyup="fakingText()" id="display"></textarea>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.-->
+<script>
+    let a = [[7, 8, 9, 11, 52, 66, 11, 22],
+        [87, 11, 225, 35, 44, 62, 78]]
+    let nt = [];
+    for (let i = 0; i < a.length; i++) {
+        for (j = 0; j < a[i].length ; j++) {
+            if (ktsnt(a[i][j])){
+              nt.push(a[i][j])
+            }
+        }
+    }console.log(nt)
+    document.write("so nguyen to bao gom: " + nt + "<br>")
+    document.write("so luong snt  la: " + nt.length)
+
+    let k=ktsnt()
+    function ktsnt(n){
+      let dem = 0;
+     for (let i = 2; i<n;i++){
+       if (n%i===0){
+         dem++
+       }
+     } if (dem === 0){
+       return true;
+      } else return false
+    }
+   /* alert(k)*/
+</script>
+</body>
+</html>

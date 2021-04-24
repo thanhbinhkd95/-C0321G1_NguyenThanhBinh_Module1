@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>money</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <th>
+                <lable>Amount</lable>
+                <br></th>
+            <th>
+                <lable> From scurency</lable>
+            </th>
+            <th>
+                <lable> To scurency</lable>
+            </th>
+        </tr>
+        <tr>
+            <td><input type="text" name="money" id="tien"/></td>
+            <td>
+                <select id="datnuoc" style="margin-right: 10px;width: 180px" name="qg">
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="My">My</option>
+                </select>
+            </td>
+            <td>
+                <select id="ch" name="qư">
+                    <option value="usd">usd</option>
+                    <option value="dong">dong</option>
+                </select></td>
+            <td style="background-color: blueviolet">
+                <button type="button" onclick="ketqua()">convenrt</button>
+            </td>
+
+        </tr>
+
+    </table>
+
+</form>
+</body>
+</html>
+<script>
+
+    function ketqua() {
+
+        let ch1 = document.getElementById("ch").value;
+        let a = document.getElementById("tien").value;
+        let gt = parseInt(a)
+        let dn = document.getElementById("datnuoc").value;
+
+        //   alert("ass"+d)
+        // alert("qqqqq"+dn)
+        if (dn == "Vietnam" && ch1 == "usd") {
+            let kqcd = gt * 1 / 20
+            document.write("ket qua chuyen doi" + kqcd)
+        }
+        else if (dn == "My" && ch1 == "dong")
+        {
+            let kqcd = gt * 20;
+            document.write("ket qua chuyen doi :" + kqcd)
+        } else
+            document.write("chon lai")
+    }
+</script>

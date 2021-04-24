@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = "4655"
+    let a = ['không', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín']
+    let newArr = []
+    newArr = str.split("") //[4,6,5,5]
+    let newArr1 = []
+    for (let i = 0; i < newArr.length; i++) {
+        newArr1.push(a[newArr[i]])
+    }
+    console.log(newArr1);
+    let newArr2 = newArr1.join(" ")
+    document.write("Chuỗi vừa nhập là: " + str + "<br>")
+    document.write("Chuỗi sau khi chuyển đổi là: " + newArr2)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prime Number</title>
+</head>
+<body>
+<script>
+  for (let i = 2; i <= 100; i++) {
+
+    let kophaisonguyento = false;
+    for (let N = 2; N < i; N++) {
+      if (i % N === 0) {
+        kophaisonguyento = true;
+      }
+    }
+    if (kophaisonguyento === false) {
+      console.log(i);
+    }
+  }
+</script>
+</body>
+</html>

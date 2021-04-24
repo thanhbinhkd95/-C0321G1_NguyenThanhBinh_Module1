@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle</title>
+</head>
+<body>
+<h2>Chuong trinh tinh cac kieu con da dieu hinh chu nhat</h2>
+<h3>1.Nhap thong so</h3>
+<h4><label for="chieungang">Nhap chieu ngang</label></h4>
+
+<input type="number" id="chieungang" width="300px" placeholder="Nhap chieu ngang" value=""><br>
+
+<h4><label for="chieudoc">Nhap chieu doc</label></h4>
+
+<input type="number" id="chieudoc" width="300px" placeholder="Nhap chieu ngang" value=""><br><br>
+
+<p id="tinhs"></p>
+<p id="tinhc"></p>
+
+<button type="button" onclick="tinhdientich()" value="tinhS">Tinh S</button>
+<button type="button" onclick="tinhchuvi()" value="tinhC">Tinh Chuvi</button>
+<button id="ve" onclick="createRectangle()">Bam vao la ve</button>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+
+<script>
+
+
+    class Rectangle {
+        constructor(a, b) {
+            this.a = a;
+            this.b = b;
+
+            this.tinhS = function tinhdientich() {
+
+                let s = a * b;
+                document.getElementById("tinhs").innerHTML = s + " la S";
+            };
+
+            this.tinhC = function tinhchuvi() {
+
+                let c = (a + b) * 2;
+                document.getElementById("tinhc").innerHTML = c + " chuvine";
+            };
+
+            this.veCanvas = function () {
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.fillStyle = "#FF0000";
+                ctx.fillRect(20, 20, a, b);
+                ctx.clearRect(21, 21, a - 2, b - 2);
+            }
+
+        }
+
+        seta(a) {
+            this.a = a;
+        }
+
+        geta() {
+            return this.a;
+        }
+
+        seta(b) {
+            this.b = b;
+        }
+
+        getb() {
+            return this.b;
+        }
+    }
+
+    // var a = parseFloat(chieungang.value);
+
+    // var  b = parseFloat(chieudoc.value);
+    let a = 34;
+    let b = 43;
+    console.log(b);
+    console.log(a);
+    let Rectangle1 = new Rectangle(a, b)
+    Rectangle1.tinhC()
+    Rectangle1.tinhS()
+
+    var ctx = document.getElementById("myCanvas").getContext("2d");
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(20, 20, a, b);
+    ctx.clearRect(21, 21, a - 2, b - 2)
+
+    Rectangle1.veCanvas()
+
+</script>
+</body>
+</html>

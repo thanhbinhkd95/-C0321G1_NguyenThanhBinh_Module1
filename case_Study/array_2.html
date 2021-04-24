@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>missing int</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    // /*let n = parseInt(prompt("Nhap so luong phan tu cua mang"))*/
+    // for (let i = 0; i < 5; i++) {
+    //   a[i] = prompt("nhập vào phần tử thứ " + i)
+    // }
+    // var a = new Array(5)
+    // var b = new Array1(6)
+    // /* for (let j = 0; j < 5; j++) {
+    //    b[j] = prompt("nhập vào phần tử thứ " + j)
+    // */
+    // }
+    // var c = []
+    let a = [7, 2, 5, 3, 5, 3]
+    let b = [7, 2, 5, 4, 6, 3, 5, 3]
+    let c = []
+    for (let i = 0; i < b.length; i++) {
+        if (a.indexOf(b[i]) === -1) {
+            c.push(b[i])
+        }
+    }
+    alert(c)
+
+</script>

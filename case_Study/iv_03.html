@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 3: Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.
+Ví dụ: s1 = "aabcc" và s2 = "adcaa", thì kết quả commonCharacterCount(s1, s2) = 3.
+⇨	2 xâu s1 và s2 có 3 kí tự chung: 2 kí tự 'a' và 1 kí tự 'c'.-->
+<script>
+    let a = "aabcc"
+    let b = "adcaa"
+    let c = a.split("");
+    let d = b.split("");
+    let m = []
+    console.log(c)
+    console.log(d)
+    for (let i = 0; i < a.length; i++) {
+        if (d.indexOf(c[i]) !== -1) {
+            m.push(c[i]);
+            d[(d.indexOf(c[i]))] = "" /*gán phần từ d[] được phần tử c[i] được duyện trên mảng d,
+                                        biến nó thành phần tử rỗngd*/
+        }
+    }
+    console.log(m)
+
+    document.write("cackitugiongnhau: " + m + "<br>")
+    document.write("so ki tu giong nhau: " + m.length)
+</script>
+</body>
+</html>

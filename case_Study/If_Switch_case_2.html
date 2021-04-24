@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check nguyên âm</title>
+</head>
+<body>
+<center>
+  <h1><label for="nhap">Nhập ký tự để kiểm tra</label></h1>
+  <input type="text" id="nhap" onkeyup="check()" placeholder="Nhập đi bạn hiền">
+  <script>
+function check(){
+  let a = ['u', 'i', 'a', 'e','o','O', 'U', 'I', 'A', 'E'];
+  let b = document.getElementById("nhap").value
+  if (a.indexOf(b)!==-1) {
+    alert(b + " là nguyên âm")
+  }
+  else{
+    alert(b + " là phụ âm")
+  }
+}
+  </script>
+</center>
+</body>
+</html>
